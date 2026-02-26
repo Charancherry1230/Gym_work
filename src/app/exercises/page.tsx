@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/Card";
-import { Search, Filter, Dumbbell, ChevronRight, Zap } from "lucide-react";
+import { Search, Dumbbell, ChevronRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 

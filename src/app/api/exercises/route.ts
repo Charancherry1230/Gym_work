@@ -7,7 +7,7 @@ export async function GET() {
             orderBy: { name: "asc" },
         });
         return NextResponse.json(exercises);
-    } catch (error) {
+    } catch {
         return NextResponse.json({ message: "Error fetching exercises" }, { status: 500 });
     }
 }

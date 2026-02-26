@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Plus, Dumbbell, Calendar, Play, ListFilter, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+
 
 interface Workout {
     id: string;

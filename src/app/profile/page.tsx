@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import {
     User,
-    Mail,
     Shield,
     Bell,
     Moon,
@@ -17,7 +16,6 @@ import {
     Settings,
     ShieldCheck
 } from "lucide-react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export default function ProfilePage() {
@@ -40,6 +38,7 @@ export default function ProfilePage() {
                     <div className="relative group mb-6">
                         <div className="w-32 h-32 rounded-3xl bg-white/[0.02] border border-white/5 flex items-center justify-center relative overflow-hidden group-hover:border-lime-400/30 transition-all shadow-[0_0_30px_rgba(255,255,255,0.02)]">
                             {session?.user?.image ? (
+                                // eslint-disable-next-line @next/next/no-img-element
                                 <img src={session.user.image} alt="Profile" className="w-full h-full object-cover" />
                             ) : (
                                 <User className="w-12 h-12 text-slate-800 group-hover:text-lime-400 transition-colors" />

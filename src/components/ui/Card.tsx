@@ -16,7 +16,7 @@ export const Card = ({ children, className, animate = true, ...props }: CardProp
         </div>
     );
 
-    if (!animate) return <div {...(props as any)}>{content}</div>;
+    if (!animate) return <div {...(props as React.HTMLAttributes<HTMLDivElement>)}>{content}</div>;
 
     return (
         <motion.div

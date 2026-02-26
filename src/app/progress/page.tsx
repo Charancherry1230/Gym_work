@@ -1,10 +1,8 @@
 "use client";
 
 import { Card } from "@/components/ui/Card";
-import { motion } from "framer-motion";
+
 import {
-    LineChart,
-    Line,
     XAxis,
     YAxis,
     CartesianGrid,
@@ -17,9 +15,7 @@ import {
     Area
 } from "recharts";
 import {
-    ArrowUpRight,
     Trophy,
-    Calendar,
     Clock,
     TrendingUp,
     Target,

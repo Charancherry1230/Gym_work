@@ -19,8 +19,9 @@ export async function POST(req: Request) {
         const workout = await prisma.workout.create({
             data: {
                 name,
-                userId: (session.user as any).id,
+                userId: (session.user as { id: string }).id,
                 exercises: {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     create: exercises.map((ex: any) => ({
                         exerciseId: ex.exerciseId,
                         sets: ex.sets,
@@ -46,7 +47,7 @@ export async function GET() {
         }
 
         const workouts = await prisma.workout.findMany({
-            where: { userId: (session.user as any).id },
+            where: { userId: (session.user as { id: string }).id },
             include: {
                 exercises: {
                     include: { exercise: true }
@@ -57,7 +58,7 @@ export async function GET() {
         });
 
         return NextResponse.json(workouts);
-    } catch (error) {
+    } catch {
         return NextResponse.json({ message: "Error fetching workouts" }, { status: 500 });
     }
 }

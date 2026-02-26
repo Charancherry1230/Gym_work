@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Plus, Trash2, Save, Dumbbell, Zap, ChevronRight, Command } from "lucide-react";
+import { Plus, Trash2, Save, Dumbbell, Zap, Command } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+
 
 interface Exercise {
     id: string;
@@ -49,6 +49,7 @@ export default function WorkoutBuilder() {
         setItems([...items, newItem]);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const updateItem = (id: string, field: keyof WorkoutItem, value: any) => {
         setItems(items.map((item) => {
             if (item.id === id) {
@@ -88,7 +89,7 @@ export default function WorkoutBuilder() {
             if (res.ok) {
                 router.push("/workouts");
             }
-        } catch (error) {
+        } catch {
             console.error("Failed to save workout");
         } finally {
             setLoading(false);
