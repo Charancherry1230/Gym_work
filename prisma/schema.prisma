@@ -4,41 +4,40 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // url      = env("DATABASE_URL")
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  password      String?
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  workouts      Workout[]
-  progressLogs  ProgressLog[]
+  id           String        @id @default(cuid())
+  name         String?
+  email        String?       @unique
+  password     String?
+  image        String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  progressLogs ProgressLog[]
+  workouts     Workout[]
 }
 
 model Exercise {
-  id              String            @id @default(cuid())
-  name            String
-  category        String
-  description     String
-  targetMuscles   String[]
-  suggestedSets   Int?
-  suggestedReps   Int?
+  id               String            @id @default(cuid())
+  name             String
+  category         String
+  description      String
+  targetMuscles    String[]
+  suggestedSets    Int?
+  suggestedReps    Int?
   workoutExercises WorkoutExercise[]
 }
 
 model Workout {
-  id          String            @id @default(cuid())
-  name        String
-  userId      String
-  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exercises   WorkoutExercise[]
+  id           String            @id @default(cuid())
+  name         String
+  userId       String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
   progressLogs ProgressLog[]
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @updatedAt
+  user         User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercises    WorkoutExercise[]
 }
 
 model WorkoutExercise {
@@ -48,18 +47,18 @@ model WorkoutExercise {
   sets       Int
   reps       Int
   weight     Float?
-  duration   Int? // in minutes
-  workout    Workout  @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+  duration   Int?
   exercise   Exercise @relation(fields: [exerciseId], references: [id])
+  workout    Workout  @relation(fields: [workoutId], references: [id], onDelete: Cascade)
 }
 
 model ProgressLog {
-  id            String   @id @default(cuid())
-  userId        String
-  workoutId     String
-  date          DateTime @default(now())
+  id             String   @id @default(cuid())
+  userId         String
+  workoutId      String
+  date           DateTime @default(now())
   caloriesBurned Float?
-  duration      Int? // aggregate duration in minutes
-  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  workout       Workout  @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+  duration       Int?
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workout        Workout  @relation(fields: [workoutId], references: [id], onDelete: Cascade)
 }
