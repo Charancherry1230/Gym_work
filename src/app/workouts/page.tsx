@@ -45,7 +45,7 @@ export default function WorkoutsPage() {
                     <p className="text-slate-500 font-medium text-sm mt-1 uppercase tracking-wide">Ready for deployment. Select your target system.</p>
                 </div>
                 <Link href="/builder">
-                    <Button className="flex items-center gap-3 h-14 px-8 rounded-2xl group shadow-[0_0_20px_rgba(190,242,100,0.2)]">
+                    <Button className="flex items-center gap-3 h-14 px-8 rounded-2xl group shadow-[0_0_20px] shadow-lime-400/20">
                         <Plus className="w-5 h-5 transition-transform group-hover:rotate-90" />
                         <span className="text-xs font-black tracking-widest">ADD NEW PLAN</span>
                     </Button>
@@ -104,7 +104,7 @@ export default function WorkoutsPage() {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <Button variant="primary" className="flex-1 h-12 rounded-xl gap-3 text-[10px] font-black tracking-[0.2em] group-hover:shadow-[0_0_20px_rgba(190,242,100,0.25)]">
+                                    <Button variant="primary" className="flex-1 h-12 rounded-xl gap-3 text-[10px] font-black tracking-[0.2em] group-hover:shadow-[0_0_20px] group-hover:shadow-lime-400/25">
                                         <Play className="w-4 h-4 fill-current" />
                                         <span>LAUNCH SYSTEM</span>
                                     </Button>

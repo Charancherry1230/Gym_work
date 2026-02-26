@@ -59,7 +59,7 @@ export default function ProgressPage() {
                     <p className="text-slate-500 font-medium text-sm mt-1 uppercase tracking-wide">Detailed projection of your physical evolution.</p>
                 </div>
                 <div className="flex items-center gap-3 bg-white/[0.02] p-2 pr-6 rounded-3xl border border-white/5">
-                    <div className="w-12 h-12 rounded-2xl bg-lime-400 flex items-center justify-center text-black font-black italic text-xl shadow-[0_0_20px_rgba(190,242,100,0.3)]">
+                    <div className="w-12 h-12 rounded-2xl bg-lime-400 flex items-center justify-center text-black font-black italic text-xl shadow-[0_0_20px] shadow-lime-400/30">
                         +12
                     </div>
                     <div>

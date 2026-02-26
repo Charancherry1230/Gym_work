@@ -54,7 +54,7 @@ export const Sidebar = () => {
             <div className="mt-auto space-y-4">
                 <Link
                     href="/builder"
-                    className="flex items-center justify-center gap-3 px-4 py-4 rounded-2xl bg-lime-400 text-black font-black uppercase tracking-widest text-sm transition-all hover:bg-lime-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(190,242,100,0.3)]"
+                    className="flex items-center justify-center gap-3 px-4 py-4 rounded-2xl bg-lime-400 text-black font-black uppercase tracking-widest text-sm transition-all hover:bg-lime-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px] shadow-lime-400/30"
                 >
                     <PlusCircle className="w-5 h-5" />
                     <span>Quick Start</span>
